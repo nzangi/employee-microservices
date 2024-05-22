@@ -1,7 +1,10 @@
 package com.nzangi.departmentservice.controller;
 
+import com.nzangi.departmentservice.client.EmployeeClient;
 import com.nzangi.departmentservice.entity.Department;
 import com.nzangi.departmentservice.service.DepartmentService;
+import com.nzangi.employeeservice.entity.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.autoconfigure.observation.ObservationProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +21,8 @@ public class DepartmentController {
     public DepartmentController(DepartmentService departmentService){
         this.departmentService = departmentService;
     }
+    @Autowired
+    private EmployeeClient employeeClient;
 
     // find all departments
     @GetMapping
@@ -51,6 +56,19 @@ public class DepartmentController {
     public ResponseEntity<String> deleteDepartment(@PathVariable Long departmentId){
         departmentService.deleteDepartment(departmentId);
         return ResponseEntity.ok("Department Deleted Successfully!");
+    }
+
+    @GetMapping("/with-employees")
+    public List<Department> findAllDepartmentsWithEmployees(){
+        List<Department> departments = departmentService.findAllDepartments();
+        departments.forEach( department ->
+                {
+                    List<Employee> employees = employeeClient.findEmployeeByDepartmentId(department.getDepartmentId()).getBody();
+                    department.setEmployees(employees);
+                }
+        );
+        return departments;
+
     }
 
 

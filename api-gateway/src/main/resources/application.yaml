@@ -1,0 +1,39 @@
+
+#server:
+#  port: 8004
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8000/eureka/
+#
+#management:
+#  tracing:
+#    sampling:
+#      probability: 1.0
+
+spring:
+  application:
+    name: api-gateway
+
+#  config:
+#    import: "optional:configserver:http://localhost:8002"
+#
+  config:
+    import: "optional:configserver:http://localhost:8002"
+
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: employee-service
+            uri: lb://employee-service
+            predicates:
+              - Path=/employee/**
+
+          - id: department-service
+            uri: lb://department-service
+            predicates:
+              - Path=/department/**
+
+
