@@ -11,9 +11,7 @@ import java.util.List;
 @Service
 public class DepartmentServiceImplementation implements DepartmentService {
     //DI of DepartmentRepository
-    @Autowired
     private DepartmentRepository departmentRepository;
-
     public DepartmentServiceImplementation(DepartmentRepository departmentRepository){
         this.departmentRepository=departmentRepository;
     }
