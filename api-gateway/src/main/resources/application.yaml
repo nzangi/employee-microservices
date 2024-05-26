@@ -23,7 +23,6 @@ spring:
     import: "optional:configserver:http://localhost:8002"
 
   cloud:
-
     gateway:
       mvc:
         routes:
@@ -37,18 +36,18 @@ spring:
             predicates:
               - Path=/department/**
 
-springdoc:
-  api-docs:
-    enabled: true
-    path: /v3/api-gateway
-  swagger-ui:
-    path: /swagger-ui.html
-    urls:
-      - url: /v1/docs/employee-service
-        name: employee-service
-      - url: /v1/docs/department-service
-        name: department-service
-  enable-native-support: true
+#springdoc:
+#  api-docs:
+#    enabled: true
+#    path: /v3/api-gateway
+#  swagger-ui:
+#    path: /swagger-ui.html
+#    urls:
+#      - url: /v1/docs/employee-service
+#        name: employee-service
+#      - url: /v1/docs/department-service
+#        name: department-service
+#  enable-native-support: true
 ##    urls:
 ##      - url: /v1/docs/department-service
 ##        name: Department Service

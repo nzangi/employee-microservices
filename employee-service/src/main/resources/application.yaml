@@ -18,9 +18,9 @@ spring:
     hibernate:
       ddl-auto: update
 
-springdoc:
-  api-docs:
-    enabled: true
-    path: /v1/docs/employee-service
-  swagger-ui:
-    path: /swagger-ui.html
+#springdoc:
+#  api-docs:
+#    enabled: true
+#    path: /v1/docs/employee-service
+#  swagger-ui:
+#    path: /swagger-ui.html
