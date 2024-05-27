@@ -4,7 +4,7 @@
 
 <img src="images/spring-boot.png"  height="437"  alt="spring boot image">
 
-![microservices](images/microservices.jpg)
+[//]: # (![microservices]&#40;images/microservices.jpg&#41;)
 
 ## Documentation
 
