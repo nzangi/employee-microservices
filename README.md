@@ -4,6 +4,7 @@
 
 <img src="images/spring-boot.png"  height="437"  alt="spring boot image">
 
+![microservices](images/microservices.jpg)
 
 ## Documentation
 
@@ -101,3 +102,43 @@ spring-boot:run
 ```
 
 ### Working with Postman on the Microservice
+Monitoring the services using eureka server
+
+<img src="images/eureka.png">
+
+### Get all the employees
+<img src="images/getemployees.png">
+
+### Get the departmnet services with employees on it.
+This data comes from two different databases connected together using spring reactive. Each department payslips all employees from it.
+
+<img src="images/with-employees.png">
+
+### Get all departments
+<img src="images/departments.png">
+
+### Create an employee
+<img src="images/create-employee.png">
+
+### Update employee
+
+<img src="images/update-employee.png">
+
+### Delete Employeee
+
+<img src="images/delete-employee.png">
+
+### Get all departments
+
+<img src="images/get-departments.png">
+
+### Create a new department
+<img src="images/create-department.png">
+
+### Update department
+
+<img src="images/update-department.png">
+
+### Delete Department
+
+<img src="images/delete-department.png">
